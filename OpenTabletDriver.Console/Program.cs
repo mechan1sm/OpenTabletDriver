@@ -28,7 +28,6 @@ namespace OpenTabletDriver.Console
             await root.InvokeAsync(args);
         }
 
-        
         static IEnumerable<Command> GenerateSTDIOCommands()
         {
             yield return CreateCommand(stdioCommands, "Open with stdio", "stdio");

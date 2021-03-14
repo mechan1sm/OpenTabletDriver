@@ -20,7 +20,6 @@ namespace OpenTabletDriver.Console
 {
     partial class Program
     {
-
         #region STDIO
             
         static async Task stdioCommands()
@@ -38,17 +37,14 @@ namespace OpenTabletDriver.Console
             root.AddRange(GenerateRequestCommands());
             root.AddRange(GenerateListCommands());
             root.AddRange(GenerateScriptingCommands());
-
-
+            
             while(true) {
-                await Out.WriteAsync("$ ");
                 stdiocmd = In.ReadLine();
                 await root.InvokeAsync(stdiocmd);
             }
         }
 
         #endregion
-
 
         #region I/O
             
